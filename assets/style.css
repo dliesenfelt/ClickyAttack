@@ -1,0 +1,117 @@
+body {
+    background-color: rgb(22, 21, 21);
+}
+
+h1 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: grey;
+    outline: 2px solid;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 12vh;
+    align-items: center;
+}
+
+.nameTags {
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    justify-content: space-evenly;
+    background-color: whitesmoke;
+}
+
+h3 {
+    width: 50%;
+}
+
+.playerName {
+    margin-left: 10px;
+}
+
+.npcName {
+    text-align: right;
+    margin-right: 10px;
+}
+
+.bars {
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    justify-content: space-evenly;
+}
+
+.playerBar {
+    display: flex;
+    width: 50%;
+    background-color: blue;
+    color: whitesmoke;
+    justify-content: left;
+}
+
+.npcBar {
+    display: flex;
+    width: 50%;
+    background-color: red;
+    color: whitesmoke;
+    justify-content: right;
+}
+
+.barInfo {
+    display: flex;
+    margin: 10px;
+}
+
+.characterContainer {
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+    width: 100%;
+}
+
+.characterArea{
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+}
+
+.character {
+    width: 350px;
+    height: 40vh;
+}
+
+
+.bottomContainer {
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.atkBtn {
+    color: coral;
+    background-color: black;
+    border-radius: 10%;
+    box-shadow: coral 0px 0px 5px 5px ;
+    height: 50px;
+    width: 100px;
+    font-size: larger;
+}
+
+
+
+
