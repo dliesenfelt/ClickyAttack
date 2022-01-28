@@ -63,14 +63,20 @@ h3 {
 .npcBar {
     display: flex;
     width: 50%;
-    background-color: red;
+    background-color: white;
     color: whitesmoke;
     justify-content: right;
 }
 
+#healthBar {
+    background-color: red;
+}
+
 .barInfo {
     display: flex;
-    margin: 10px;
+    width: 100%;
+    border: 5px black;
+    border-style: groove;
 }
 
 .characterContainer {
