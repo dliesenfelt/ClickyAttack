@@ -1,61 +1,72 @@
-//Player Character
-class Player {
-    constructor(lvl, exp) {
-        this.lvl = lvl;
-        this.exp = exp;
-    }
+//Characters
+// [ User ]
+// - Level Up 
+let userLvl = 1;
+let userExp = 0;
+for (userExp; userExp >= (((300 * userLvl) * userLvl) * (1/2)); userLvl++) {
+    userLvl;
 }
 
-let user = new Player(10, 0);
-
-
-//Enemies
+// [ Enemies]
+// - Enemy Class
 class Enemy {
-    constructor(lvl, hp, def, exp) {
+    constructor(name, lvl, hp, def, exp, sprite) {
+        this.name = name;
         this.lvl = lvl;
         this.hp = hp;
         this.def = def;
         this.exp = exp;
+        this.sprite = sprite;
     }
 }
+// - Enemy Pool
+let rat = new Enemy('Rat', 1, 50, 1, 10, "./assets/images/rat.png",);
+let goblin = new Enemy('Goblin', 3, 100, 5, 25, './assets/images/goblin.png');
+let wolf = new Enemy('Wolf', 5, 150, 7, 50, './assets/images/wolf.png');
+let enemyPool = [rat, goblin, wolf,];
 
-let rat = new Enemy(1,50, 1, 10);
-let wolf = new Enemy(7, 150, 10, 50);
-let goblin = new Enemy(5, 100, 5, 25);
-let skeleton = new Enemy(10, 200, 3, 70);
-let dragon = new Enemy(75, 50000, 100, 1000); 
+// - Spawn Enemy Function
+function spawnEnemy() {
+    document.getElementById('enemyName').innerHTML = rat.name;
+    document.getElementById('npcLvl').innerHTML = ('LVL: ' + rat.lvl);
+    document.getElementById('enemyHp').innerHTML = ('HP: ' + rat.hp);
+    return document.getElementById("npcSpawnArea").src = rat.sprite;
+}
+spawnEnemy()
 
-//Settings
-// -User Damage Function
+//Combat
+// - Attack Power Function
 function attackPower() {
-    return Math.round((user.lvl * (Math.random() * 10)));
+    return Math.round((userLvl * (Math.random() * 10)));
  }
- 
- // -Final Damage Function
- function finalDamage() {
-     return Math.round((attackPower() / goblin.def));
- }
-
- // Enemy Health
-document.getElementById('enemyHp').innerHTML = goblin.hp
-
-// -Attack Function
-document.getElementById("attackButton").addEventListener("click",
-function battleCalc() {
-    goblin.hp = goblin.hp -= finalDamage();
-    document.getElementById('enemyHp').innerHTML = goblin.hp;
-    console.log('enemy health:' + goblin.hp);
-    if (goblin.hp <= 0) {
-        expGain();
-    }
+// - Damage Function
+function finalDamage() {
+    return Math.round((attackPower() / this.def));
 }
+// - Expirenece Reward Function
+function expGain() {
+    return userExp += this.exp;
+}
+// -Attack Button
+document.getElementById("attackButton").addEventListener("click", function battleCalc() {
+    this.hp = this.hp -= finalDamage();
+    console.log('enemy health:' + this.hp);
+        if (this.hp <= 0) {
+            return expGain();
+        }
+    }
 )
 
-// -Exp Gain Function
-function expGain() {
-    document.getElementById("playerExp").innerHTML = user.exp;
-    user.exp += goblin.exp;
-}
+// User Interface
+// [ User Settings ]
+// -User Name Info
+document.getElementById('userName').innerHTML = 'Name';
+// -User Level Info
+document.getElementById('playerLvl').innerHTML = ('Lvl: ' + userLvl);
+// -User Experience Info
+document.getElementById('userExp').innerHTML = ('EXP: ' + userExp);
+
+
 
 
 

@@ -12,23 +12,23 @@
     <div class="container">
         <div class="topContainer">
             <div class="nameTags">
-                <h3 class="playerName">PLAYER</h3>
+                <h3 class="playerName" id="userName">PLAYER</h3>
+                <h3 id="playerLvl"></h3>
                 <div class="btnContainer">
                     <button class="atkBtn" id="attackButton">ATTACK!</button>
                 </div>
-                <h3 class="npcName">NPC</h3>
+                <h3 id="npcLvl"></h3>
+                <h3 class="npcName" id="enemyName"></h3>
             </div>
             <div class="bars">
                 <div class="playerBar">
                     <div class="barInfo">
-                        <p class="playerExp">EXP:</p>
-                        <p class="playerExpAmmount" id="playerExp">0</p>
+                        <p class="playerExp" id="userExp"></p>
                     </div>
                 </div>
                 <div class="npcBar">
                     <div class="barInfo" id=healthBar>
-                        <p class="npcHealth">HEALTH:</p>
-                        <p class="npcHealthAmmount" id="enemyHp">0</p>
+                        <p class="npcHealth" id="enemyHp"></p>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="characterArea">
                 <div class="character">
-                    <img src="./assets/images/Goblin Sprite.png" alt="">
+                    <img src="" id="npcSpawnArea">
                 </div>
             </div>
         </div>
